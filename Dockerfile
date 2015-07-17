@@ -12,8 +12,8 @@ RUN apt-get update -y && \
 ADD config/nginx.conf /opt/etc/nginx.conf
 RUN rm /etc/nginx/sites-enabled/default
 
-#Declaring the data dir
-ENV data_root /data
+# Declaring the data dir
+ENV ${data_root:-/data}
 
 # Nginx startup script
 ADD config/nginx-start.sh /opt/bin/nginx-start.sh
