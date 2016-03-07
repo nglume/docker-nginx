@@ -4,7 +4,7 @@ MAINTAINER "Zak Henry" <zak.henry@gmail.com>
 
 # Install Nginx
 RUN apt-get update -y && \
-    apt-get install -y nginx
+    apt-get install -y nginx ca-certificates
 
 # Apply Nginx configuration
 ADD config/nginx.conf /etc/nginx/nginx.conf
