@@ -28,7 +28,7 @@ done
 
 IP_CONF=${NGINX_CONF}/ip-restriction.conf
 ALLOWED_IPS=${NGINX_ALLOWED_IPS}
-if [ ${ALLOWED_IPS:?}  ]; then
+if [ $ALLOWED_IPS:?  ]; then
 
     echo "satisfy any;" > $IP_CONF
     echo "error_page 403 = @deny;" >> $IP_CONF
