@@ -28,8 +28,8 @@ done
 
 IP_CONF=${NGINX_CONF}/ip-restriction.conf
 ALLOWED_IPS=${NGINX_ALLOWED_IPS}
-if [ $ALLOWED_IPS:?  ]; then
-
+if [ ! -z "$ALLOWED_IPS"  ]; then
+    echo "creating ip restriction file: ${IP_CONF}"
     echo "satisfy any;" > $IP_CONF
     echo "error_page 403 = @deny;" >> $IP_CONF
 
